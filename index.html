@@ -8,179 +8,174 @@
     <meta property="og:title" content="Venture Digital" />
     <meta property="og:description" content="AI automation systems for service businesses that want fewer manual tasks, faster follow-up, and cleaner operations." />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#020617" />
     <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .vd-home { background:#020617; }
+      .vd-header { display:flex; align-items:center; justify-content:space-between; gap:2rem; padding:1.4rem clamp(1rem,4vw,4rem); border-bottom:1px solid rgba(148,163,184,.22); background:rgba(2,6,23,.92); }
+      .vd-logo { width:min(260px,55vw); height:auto; display:block; }
+      .vd-nav { display:flex; align-items:center; gap:clamp(1rem,3vw,2.5rem); color:#f8fafc; }
+      .vd-nav a { color:#f8fafc; }
+      .vd-nav .nav-cta { padding:.85rem 1.25rem; border-radius:.55rem; background:#075ee8; font-weight:800; }
+      .vd-hero { position:relative; overflow:hidden; min-height:720px; padding:clamp(3rem,8vw,6rem) clamp(1rem,4vw,4rem) 2rem; background:linear-gradient(90deg,#020617 0%,#020617 42%,rgba(2,6,23,.65) 58%,rgba(2,6,23,.2) 100%); }
+      .vd-hero::after { content:""; position:absolute; inset:0; background:radial-gradient(circle at 72% 45%,rgba(29,94,216,.18),transparent 28rem); pointer-events:none; }
+      .vd-hero-photo { position:absolute; right:0; top:0; width:54%; height:100%; object-fit:cover; z-index:0; opacity:.9; }
+      .vd-hero::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#020617 0%,rgba(2,6,23,.96) 37%,rgba(2,6,23,.48) 63%,rgba(2,6,23,.18) 100%); pointer-events:none; }
+      .vd-hero-content { position:relative; z-index:2; max-width:720px; }
+      .vd-hero h1 { font-size:clamp(3rem,7vw,5.8rem); line-height:.95; letter-spacing:-.08em; margin:0 0 1.4rem; color:#fff; }
+      .vd-hero p { color:#d6dce8; font-size:clamp(1.08rem,2vw,1.35rem); max-width:680px; }
+      .vd-eyebrow { color:#1d7cff; text-transform:uppercase; letter-spacing:.22em; font-weight:900; font-size:.88rem; margin-bottom:1.25rem; }
+      .vd-button { display:inline-flex; align-items:center; justify-content:center; gap:.75rem; margin-top:1.6rem; padding:1rem 1.55rem; border-radius:.55rem; background:#075ee8; color:#fff; font-weight:900; box-shadow:0 20px 50px rgba(7,94,232,.28); }
+      .vd-benefits { position:relative; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:clamp(3rem,8vw,5rem) 0 0; max-width:1180px; border:1px solid rgba(148,163,184,.25); border-radius:1rem; background:rgba(2,6,23,.78); backdrop-filter:blur(16px); }
+      .vd-benefit { display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:center; padding:1.5rem 2rem; border-right:1px solid rgba(148,163,184,.25); }
+      .vd-benefit:last-child { border-right:0; }
+      .vd-icon { width:54px; height:54px; display:grid; place-items:center; border:3px solid #075ee8; border-radius:999px; color:#1d7cff; font-weight:900; font-size:1.35rem; }
+      .vd-benefit h3 { margin:0 0 .2rem; color:#fff; }
+      .vd-benefit p { margin:0; color:#cbd5e1; }
+      .vd-light { background:#f8fafc; color:#0f172a; padding:clamp(3.5rem,7vw,5rem) clamp(1rem,4vw,4rem); }
+      .vd-light .vd-eyebrow { color:#075ee8; }
+      .vd-light h2 { color:#0f172a; font-size:clamp(2rem,4vw,3.2rem); letter-spacing:-.05em; }
+      .vd-results { display:grid; grid-template-columns:1fr .75fr; gap:2rem; align-items:center; max-width:1180px; margin:0 auto; }
+      .vd-diagram { display:grid; grid-template-columns:repeat(3,72px); gap:2rem; justify-content:center; align-items:center; color:#075ee8; font-size:2rem; }
+      .vd-diagram div { height:72px; display:grid; place-items:center; border:2px solid #075ee8; border-radius:.75rem; }
+      .vd-about { display:grid; grid-template-columns:300px 1fr; gap:2.25rem; align-items:center; max-width:1180px; margin:0 auto; }
+      .vd-about-photo { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:1rem; box-shadow:0 24px 70px rgba(15,23,42,.2); }
+      .vd-about h2 { margin-bottom:.25rem; }
+      .vd-title { margin:0 0 .7rem; color:#334155; font-size:1.25rem; }
+      .vd-sections { display:grid; grid-template-columns:1fr 1fr; gap:3rem; max-width:1180px; margin:0 auto; }
+      .vd-list { display:grid; gap:.8rem; padding:0; margin:1rem 0; list-style:none; }
+      .vd-list li { position:relative; padding-left:2rem; font-weight:800; }
+      .vd-list li::before { content:"✓"; position:absolute; left:0; top:.05rem; display:grid; place-items:center; width:1.25rem; height:1.25rem; border-radius:50%; background:#075ee8; color:#fff; font-size:.8rem; }
+      .vd-steps { counter-reset:step; display:grid; gap:.75rem; padding:0; margin:1rem 0; list-style:none; }
+      .vd-steps li { counter-increment:step; position:relative; padding-left:2.25rem; }
+      .vd-steps li::before { content:counter(step); position:absolute; left:0; top:.1rem; display:grid; place-items:center; width:1.35rem; height:1.35rem; border:2px solid #075ee8; border-radius:50%; color:#075ee8; font-size:.75rem; font-weight:900; }
+      .vd-footer { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.5rem clamp(1rem,4vw,4rem); background:#020617; color:#cbd5e1; border-top:1px solid rgba(148,163,184,.22); }
+      .vd-footer img { width:190px; height:auto; }
+      @media (max-width:900px){ .vd-header,.vd-footer{flex-direction:column; align-items:flex-start;} .vd-nav{width:100%; justify-content:space-between; flex-wrap:wrap;} .vd-nav .nav-cta{width:100%; text-align:center;} .vd-hero{min-height:auto; padding-bottom:2rem;} .vd-hero-photo{position:relative; width:100%; height:auto; max-height:520px; border-radius:1rem; margin-top:2rem;} .vd-hero::before{background:linear-gradient(180deg,#020617 0%,rgba(2,6,23,.92) 55%,rgba(2,6,23,.35) 100%);} .vd-benefits,.vd-results,.vd-about,.vd-sections{grid-template-columns:1fr;} .vd-benefit{border-right:0; border-bottom:1px solid rgba(148,163,184,.25);} .vd-benefit:last-child{border-bottom:0;} }
+    </style>
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="Venture Digital home">
-        <img src="./assets/logo.svg" alt="" class="brand-logo" />
-        <span>Venture Digital</span>
+  <body class="vd-home">
+    <header class="vd-header">
+      <a href="./index.html" aria-label="Venture Digital home">
+        <img class="vd-logo" src="./assets/logo.svg" alt="Venture Digital" />
       </a>
-      <nav aria-label="Primary navigation">
+      <nav class="vd-nav" aria-label="Primary navigation">
         <a href="./services.html">Services</a>
         <a href="./pricing.html">Pricing</a>
-        <a href="./intake.html">Free Audit</a>
+        <a href="#about">About</a>
+        <a href="./intake.html" class="nav-cta">Free Automation Audit</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero section">
-        <div class="hero-copy">
-          <p class="eyebrow">Free MVP launch site</p>
-          <h1>AI automation systems for service businesses that want fewer manual tasks, faster follow-up, and cleaner operations.</h1>
-          <p class="lead">We design and build workflow automations that reduce repetitive work, improve lead response, and give owners a clearer operating system without starting with expensive software.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="./intake.html">Get Free Automation Audit</a>
-            <a class="button secondary" href="./pricing.html">See Packages</a>
+    <main>
+      <section class="vd-hero">
+        <img class="vd-hero-photo" src="./assets/founder-photo.svg" alt="Thomas Franz, founder of Venture Digital" />
+        <div class="vd-hero-content">
+          <div class="vd-eyebrow">Free Automation Audit</div>
+          <h1>Tell us where your business is wasting time.</h1>
+          <p>Submit your details and we will review your workflow opportunities, package fit, and next best automation step.</p>
+          <a class="vd-button" href="./intake.html">Start Your Free Audit <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="vd-benefits" aria-label="Venture Digital benefits">
+          <article class="vd-benefit">
+            <div class="vd-icon">◷</div>
+            <div>
+              <h3>Save Hours</h3>
+              <p>Eliminate repetitive manual tasks.</p>
+            </div>
+          </article>
+          <article class="vd-benefit">
+            <div class="vd-icon">↗</div>
+            <div>
+              <h3>Increase Efficiency</h3>
+              <p>Streamline processes and reduce errors.</p>
+            </div>
+          </article>
+          <article class="vd-benefit">
+            <div class="vd-icon">$</div>
+            <div>
+              <h3>Grow Revenue</h3>
+              <p>Focus on what actually drives growth.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="vd-light">
+        <div class="vd-results">
+          <div>
+            <div class="vd-eyebrow">Automation that drives results</div>
+            <h2>Systems that work while you focus on growth.</h2>
+            <p>From lead capture to client onboarding, we build smart systems that reduce manual work and help your business scale.</p>
+          </div>
+          <div class="vd-diagram" aria-label="Automation workflow diagram">
+            <div>□</div>
+            <div>⚙</div>
+            <div>✓</div>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Automation opportunities">
-          <p class="card-label">Common automation wins</p>
-          <ul>
-            <li>Follow up with new leads faster</li>
-            <li>Route client information to the right place</li>
-            <li>Summarize intake details before calls</li>
-            <li>Reduce copy-paste admin work</li>
-            <li>Create cleaner handoffs between tools</li>
-          </ul>
-        </aside>
       </section>
 
-      <section class="section split-section">
-        <div>
-          <p class="eyebrow">The problem</p>
-          <h2>Your business is leaking time through manual follow-up, scattered tools, and repetitive admin.</h2>
-        </div>
-        <div class="stacked-copy">
-          <p>Most small service businesses do not need a giant AI transformation project. They need the obvious bottlenecks fixed first: lead capture, follow-up, reminders, onboarding, document collection, and internal task routing.</p>
-          <p>The expensive mistake is buying more software before mapping the workflow. Venture Digital starts with the process, then designs the minimum useful automation around it.</p>
-        </div>
-      </section>
-
-      <section class="section">
-        <p class="eyebrow">The solution</p>
-        <h2>Simple workflow automations built around the way your business already operates.</h2>
-        <div class="grid three">
-          <article class="tile">
-            <h3>Capture</h3>
-            <p>Collect the right information from prospects, clients, and internal teams with structured forms and intake flows.</p>
-          </article>
-          <article class="tile">
-            <h3>Route</h3>
-            <p>Move information to the right person, spreadsheet, CRM, email, or task list so fewer details get lost.</p>
-          </article>
-          <article class="tile">
-            <h3>Respond</h3>
-            <p>Prepare faster follow-up, summaries, reminders, and next steps so your team can act with less friction.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading-row">
+      <section id="about" class="vd-light">
+        <div class="vd-about">
+          <img class="vd-about-photo" src="./assets/founder-photo.svg" alt="Thomas Franz in Orlando, Florida" />
           <div>
-            <p class="eyebrow">Services preview</p>
-            <h2>Three focused services. No bloated menu.</h2>
+            <div class="vd-eyebrow">About the Founder</div>
+            <h2>Thomas Franz</h2>
+            <p class="vd-title">Founder, Venture Digital</p>
+            <p>Based in Orlando, Florida, I started Venture Digital to help business owners eliminate repetitive manual work and build systems that scale. Many companies lose time through missed follow-up, disconnected software, and inefficient workflows. Venture Digital focuses on practical automation solutions that reduce administrative burden, improve responsiveness, and create more predictable operations. The goal is simple: help businesses spend less time managing processes and more time growing.</p>
           </div>
-          <a class="button secondary" href="./services.html">View all services</a>
-        </div>
-        <div class="grid three">
-          <article class="tile feature-tile">
-            <h3>Lead Automation</h3>
-            <p>Website form routing, missed-lead follow-up, lead qualification, and appointment reminders.</p>
-          </article>
-          <article class="tile feature-tile">
-            <h3>Admin Automation</h3>
-            <p>Client onboarding, document collection, internal handoffs, and recurring email summaries.</p>
-          </article>
-          <article class="tile feature-tile">
-            <h3>AI Assistant Automation</h3>
-            <p>FAQ planning, intake summarizers, proposal draft helpers, and support workflow design.</p>
-          </article>
         </div>
       </section>
 
-      <section class="section process">
-        <p class="eyebrow">How it works</p>
-        <h2>A practical path from bottleneck to working automation.</h2>
-        <div class="steps">
+      <section class="vd-light">
+        <div class="vd-sections">
           <div>
-            <span>01</span>
-            <h3>Audit</h3>
-            <p>You complete the free automation audit so we can understand your business, software, bottlenecks, and urgency.</p>
+            <div class="vd-eyebrow">Industries We Serve</div>
+            <h2>Primary focus</h2>
+            <ul class="vd-list">
+              <li>Franchise Owners</li>
+              <li>Real Estate Operators</li>
+              <li>Local Service Businesses</li>
+              <li>Consultants &amp; Professional Service Firms</li>
+            </ul>
+            <p>We prioritize businesses that rely on lead generation, client communication, scheduling, onboarding, and recurring operational workflows because these areas typically produce the fastest automation ROI.</p>
           </div>
           <div>
-            <span>02</span>
-            <h3>Map</h3>
-            <p>We identify the trigger, inputs, processing steps, outputs, approval points, and risks before building anything.</p>
+            <div class="vd-eyebrow">Finish Plan</div>
+            <h2>One task at a time</h2>
+            <ol class="vd-steps">
+              <li>Test the homepage, services page, pricing page, and audit form on mobile and desktop.</li>
+              <li>Confirm every form submission reaches the Venture Digital Leads spreadsheet.</li>
+              <li>Add CRM columns: Lead Status, Lead Score, Package Fit, Priority, Next Action, Follow-Up Date, and Notes.</li>
+              <li>Create a reusable Gmail reply for new audit submissions.</li>
+              <li>Add a Calendly booking button after the audit form when the booking account is ready.</li>
+              <li>Add a Book a Discovery Call CTA on every page after Calendly exists.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="vd-light">
+        <div class="vd-results">
+          <div>
+            <div class="vd-eyebrow">Ready to find the bottleneck?</div>
+            <h2>Start with the free automation audit.</h2>
+            <p>Send us your business details, current tools, and biggest workflow problem. We will review the opportunity and recommend the right first automation.</p>
           </div>
           <div>
-            <span>03</span>
-            <h3>Build</h3>
-            <p>We build the simplest useful workflow first, test it with sample data, document it, and improve from there.</p>
+            <a class="vd-button" href="./intake.html">Get Free Automation Audit <span aria-hidden="true">→</span></a>
           </div>
-        </div>
-      </section>
-
-      <section class="section examples-section">
-        <p class="eyebrow">Example automations</p>
-        <h2>Start with workflows that save time or recover missed opportunities.</h2>
-        <div class="grid two">
-          <article class="tile">
-            <h3>Lead Follow-Up Automation</h3>
-            <p>When a new lead submits a form, create a structured record, send an internal alert, prepare a follow-up message, and track next action.</p>
-          </article>
-          <article class="tile">
-            <h3>Client Onboarding Automation</h3>
-            <p>Collect required details, route documents, assign tasks, and send reminders so onboarding does not depend on memory.</p>
-          </article>
-          <article class="tile">
-            <h3>Intake Summary Automation</h3>
-            <p>Turn long form responses into a clear summary before a discovery call so the conversation starts sharper.</p>
-          </article>
-          <article class="tile">
-            <h3>Weekly Operations Summary</h3>
-            <p>Compile updates from forms, spreadsheets, and notes into one operating summary for the owner or manager.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section proof">
-        <div>
-          <p class="eyebrow">Early client offer</p>
-          <h2>Discounted implementation in exchange for feedback, workflow permission, and a case study.</h2>
-        </div>
-        <div>
-          <p>We are not using fake testimonials. Early clients get a tighter implementation offer while we document measurable workflow improvements.</p>
-          <ul class="check-list">
-            <li>Time saved</li>
-            <li>Manual steps removed</li>
-            <li>Lead response improvement</li>
-            <li>Revenue opportunities recovered</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section contact-panel">
-        <p class="eyebrow">Free automation audit</p>
-        <h2>Tell us where your business is wasting time.</h2>
-        <p>Submit the free audit form and we will review your answers for automation opportunities, package fit, and next steps.</p>
-        <div class="hero-actions center-actions">
-          <a class="button primary" href="./intake.html">Get Free Automation Audit</a>
-          <a class="button secondary" href="./pricing.html">Compare Packages</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>&copy; <span id="year"></span> Venture Digital. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="./services.html">Services</a>
-        <a href="./pricing.html">Pricing</a>
-        <a href="./intake.html">Free Audit</a>
-      </div>
+    <footer class="vd-footer">
+      <img src="./assets/logo.svg" alt="Venture Digital" />
+      <div>Orlando, Florida</div>
+      <div><a href="mailto:venturedigital2027@gmail.com">venturedigital2027@gmail.com</a></div>
     </footer>
 
     <script src="./script.js"></script>
