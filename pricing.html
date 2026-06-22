@@ -8,6 +8,43 @@
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .founder-pricing-block {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1.25rem;
+        align-items: center;
+        margin-top: 2rem;
+        max-width: 760px;
+        padding: 1.25rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 1.25rem;
+        background: rgba(15, 23, 42, 0.72);
+        box-shadow: 0 24px 80px rgba(2, 6, 23, 0.35);
+      }
+      .founder-pricing-block img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+      .founder-pricing-block p {
+        margin-bottom: .35rem;
+        color: #cbd5e1;
+      }
+      .founder-pricing-block strong {
+        color: #f8fafc;
+      }
+      @media (max-width: 640px) {
+        .founder-pricing-block {
+          grid-template-columns: 84px 1fr;
+        }
+        .founder-pricing-block img {
+          width: 84px;
+          height: 84px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -27,6 +64,13 @@
         <p class="eyebrow">Pricing</p>
         <h1>Start with one useful automation, then expand only after the workflow proves value.</h1>
         <p class="lead">These packages are intentionally simple. The goal is to sell a clear outcome, not confuse buyers with a giant services menu.</p>
+        <div class="founder-pricing-block">
+          <img src="./assets/founder-photo.svg" alt="Thomas Franz, founder of Venture Digital" />
+          <div>
+            <p><strong>Built by Thomas Franz</strong>, Founder of Venture Digital in Orlando, Florida.</p>
+            <p>Every package starts with a workflow audit so we can recommend the right first automation instead of selling unnecessary complexity.</p>
+          </div>
+        </div>
       </section>
 
       <section class="section pricing-grid-section">
