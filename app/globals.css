@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #05050a;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #05050a;
+  color: white;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.swipe-snap {
+  scroll-snap-type: y mandatory;
+}
+
+.swipe-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
